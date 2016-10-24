@@ -1,19 +1,22 @@
 
-
 import com.davesartory.launchpad.*;
 
 public class LaunchpadDrawing {
 
-    // store the current "pen" color
+    // store the current "pen" color; default to red
     private static LpColor currentColor = LpColor.RED;
 
     public static void main(String[] args) {
-
+		
+		// instantiate a new Launchpad
         Launchpad lp = LaunchpadFactory.getLaunchPad();
-        lp.clearAll(); //sometimes during testing we have leftover lights still on
         
+        // clear the launchpad; sometimes during testing we have leftover lights still on
+        lp.clearAll();
+        
+        // draw the color palette at the top of screen
         drawPalette(lp);
-
+		
         // add palette listeners to top row buttons
         for (final LpButton b : lp.getTopButtons()) {
             // each button will now reset the "pen" to the button's color
@@ -26,11 +29,13 @@ public class LaunchpadDrawing {
             });
 
         }
-
+		
         // add a reset button
         lp.getButton(LpButtonTypes.VOLUME).addButtonListener(new ButtonListener() {
             @Override
             public void onPush() {
+            	// this code runs when you push the button that we're adding this
+            	// listener to
                 lp.clearGrid();
             }
         });
@@ -40,6 +45,7 @@ public class LaunchpadDrawing {
             b.addButtonListener(new ButtonListener() {
                 @Override
                 public void onPush() {
+                	// turn the light on using the current pen color
                     b.lightOn(currentColor);
                 }
             });
@@ -52,7 +58,7 @@ public class LaunchpadDrawing {
      *
      */
     private static void drawPalette(Launchpad lp) {
-
+		
         lp.getButton(LpButtonTypes.UP).lightOn(LpColor.RED);
         lp.getButton(LpButtonTypes.DOWN).lightOn(LpColor.ORANGE);
         lp.getButton(LpButtonTypes.LEFT).lightOn(LpColor.YELLOW);
