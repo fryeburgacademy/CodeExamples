@@ -1,6 +1,7 @@
 
 
 import com.davesartory.launchpad.*;
+import com.davesartory.launchpad.LpButton.LpFade;
 
 public class LightFX {
     
@@ -9,6 +10,7 @@ public class LightFX {
     public static void main(String[] args) {
 
         lp = LaunchpadFactory.getLaunchPad();
+        lp.setWindowTitle("Light Race");
         
         lp.getButton(LpButtonTypes.UP).lightOn();
         lp.getButton(LpButtonTypes.UP).addButtonListener(new ButtonListener() {
@@ -32,32 +34,11 @@ public class LightFX {
         
     }
     
-    public static void fadeInOut(LpButton b, LpColor c,long millis){
-        Thread one = new Thread() {
-            public void run() {
-                b.lightOn(c, LpBrightness.LOW);
-                lp.pause(millis);
-                b.lightOn(c, LpBrightness.MEDIUM);
-                lp.pause(millis);
-                b.lightOn(c, LpBrightness.HIGH);
-                lp.pause(millis);
-                b.lightOn(c, LpBrightness.MEDIUM);
-                lp.pause(millis);
-                b.lightOn(c , LpBrightness.LOW);
-                lp.pause(millis);
-                b.lightOff();
-            }  
-        };
-
-        one.start();
-       
-    }
-    
     public static void smoothAnimate(int row, int start,int end, LpColor c){
         Thread t = new Thread(){
             public void run(){
                 for(int i = start; i <= end;i++){
-                 fadeInOut(lp.getButton(row,i),c,50);
+                    lp.getButton(row,i).fadeOut(c, 150);
                     lp.pause(100);
                 }
             }
