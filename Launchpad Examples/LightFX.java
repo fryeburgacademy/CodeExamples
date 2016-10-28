@@ -1,7 +1,6 @@
 
 
 import com.davesartory.launchpad.*;
-import com.davesartory.launchpad.LpButton.LpFade;
 
 public class LightFX {
     
