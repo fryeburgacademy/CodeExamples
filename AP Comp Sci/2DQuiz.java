@@ -19,6 +19,7 @@ public class 2DQuiz {
                 // we have access to a SINGLE location in the grid
                 System.out.print(names[row][col] + "  "); 
             }
+            System.out.println();
         }
         
         // COLUMN MAJOR
@@ -26,6 +27,7 @@ public class 2DQuiz {
             for(int row = 0; row < names.length; row++){
                 System.out.print(names[row][col] + "  ");
             }
+             System.out.println();
         }
     
         
