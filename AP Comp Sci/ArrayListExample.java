@@ -7,6 +7,9 @@ public class ArrayListExample{
 	
 	public static void main(String[] args){
 		
+		// List is an interface, a set of rules for how different kinds of Lists should all behave.
+		// ArrayList is an implementation -- MORE specific than an interface, so we create an ArrayList
+		// and store it in a List
 		List<String> people = new ArrayList<String>();
 		
 		people.add("Dave");
