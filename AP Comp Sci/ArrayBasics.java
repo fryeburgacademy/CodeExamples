@@ -31,9 +31,9 @@ public class ArrayBasics {
 	/**
 	* Print each value in the given array to the console
 	*/
-	public static void printArray(int[] a){
-		for(int i = 0; i < a.length; i++){
-			System.out.print(a[i] + "   ");
+	public static void printArray(int[] anyArray){
+		for(int i = 0; i < anyArray.length; i++){
+			System.out.print(anyArray[i] + "   ");  // print the value and some whitespace
 		}
 		// print a line break
 		System.out.println();
