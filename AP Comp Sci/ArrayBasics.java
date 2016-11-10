@@ -18,6 +18,15 @@ public class ArrayBasics {
 		simpleArray[2] = 756;
 		simpleArray[3] = 5;
 		simpleArray[4] = 149908;
+	    
+	        // create a new array of String values with 4 elements, no assigned values
+		String[] simpleStringArray = new String[4];
+		// values must then be filled in manually
+		simpleStringArray[0] = "Flowers";
+		simpleStringArray[1] = "Unicorns";
+		simpleStringArray[2] = "Narwhals";
+		simpleStringArray[3] = "My Little Pony";
+	
 		
 		// create a new array of int values with 6 elements AND assign values
 		// use shorthand instantiation
