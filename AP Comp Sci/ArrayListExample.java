@@ -25,7 +25,7 @@ public class ArrayListExample{
 		
 		// print each String using a regular for loop and index
 		for(int i = 0 ; i < people.size(); i++){
-			System.out.println(people.get(i);
+			System.out.println(people.get(i));
 		}
 			
 	}
