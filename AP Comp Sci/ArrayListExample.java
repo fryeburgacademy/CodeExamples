@@ -18,8 +18,14 @@ public class ArrayListExample{
 		people.add(1,"Curtis");
 		people.set(2,"Andy");
 		
+		// print each String using an enhanced for loop
 		for(String s : people){
 			System.out.println(s);
+		}
+		
+		// print each String using a regular for loop and index
+		for(int i = 0 ; i < people.size(); i++){
+			System.out.println(people.get(i);
 		}
 			
 	}
